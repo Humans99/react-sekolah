@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import "./styles/App.css";
-import { HomePage, StudentPage, TeacherPage } from "./pages/list";
 import { Layout } from "./components";
+import { RoleDashboard } from "./pages/dashboard";
+import { StudentPage, TeacherPage } from "./pages/list";
+import "./styles/App.css";
 
 function App() {
   // Path *'s
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<RoleDashboard />} />
         <Route path="/teachers" element={<TeacherPage />} />
         <Route path="/students" element={<StudentPage />} />
       </Route>
