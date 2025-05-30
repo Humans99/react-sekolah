@@ -15,7 +15,7 @@ const Sidebar = () => {
                 <a
                   href={item.href}
                   key={item.label}
-                  className="flex items-center gap-4 justify-center lg:justify-start text-gray-700 py-2 font-medium rounded-lg md:px-2 hover:bg-brand-100"
+                  className="flex items-center gap-4 justify-center lg:justify-start text-gray-700 py-2 font-medium rounded-lg md:px-2 hover:bg-brand-100 hover:ml-2 transition-all duration-500"
                 >
                   <img src={item.icon} alt="" className="w-6" />
                   <span className="hidden lg:block whitespace-nowrap text-gray-700 font-mono font-semibold">
