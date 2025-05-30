@@ -19,9 +19,6 @@ const Navbar = () => {
 
       <div className="flex items-center gap-6 justify-end w-full">
         <div className="bg-gray-50 border border-gray-300 w-10 h-10 flex justify-center items-center cursor-pointer rounded-full">
-          <i className="ri-moon-line text-gray-500 text-lg"></i>
-        </div>
-        <div className="bg-gray-50 border border-gray-300 w-10 h-10 flex justify-center items-center cursor-pointer rounded-full">
           <i className="ri-message-2-line text-gray-500 text-lg"></i>
         </div>
         <div className="bg-gray-50 border border-gray-300 w-10 h-10 flex justify-center items-center cursor-pointer rounded-full">
