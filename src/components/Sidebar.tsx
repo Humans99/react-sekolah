@@ -18,7 +18,7 @@ const Sidebar = () => {
                   className="flex items-center gap-4 justify-center lg:justify-start text-gray-700 py-2 font-medium rounded-lg md:px-2 hover:bg-brand-100"
                 >
                   <img src={item.icon} alt="" className="w-6" />
-                  <span className="hidden lg:block whitespace-nowrap font-medium text-gray-700">
+                  <span className="hidden lg:block whitespace-nowrap text-gray-700 font-mono font-semibold">
                     {item.label}
                   </span>
                 </a>
