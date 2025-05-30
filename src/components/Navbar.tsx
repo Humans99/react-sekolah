@@ -25,8 +25,10 @@ const Navbar = () => {
           <i className="ri-megaphone-line text-gray-500 text-lg"></i>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm leading-3 font-medium">John Doe</span>
-          <span className="text-xs text-gray-500 text-right capitalize">
+          <span className="text-sm leading-3 font-semibold font-mono">
+            John Doe
+          </span>
+          <span className="text-xs text-gray-500 text-right capitalize font-mono">
             {role}
           </span>
         </div>
