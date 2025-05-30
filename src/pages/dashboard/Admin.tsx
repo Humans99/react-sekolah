@@ -1,4 +1,4 @@
-import { StudentChart, UserCard } from "../../components";
+import { AttendanceChart, StudentChart, UserCard } from "../../components";
 
 const AdminPage = () => {
   return (
@@ -14,6 +14,9 @@ const AdminPage = () => {
         <div className="flex gap-4 flex-col lg:flex-row">
           <div className="w-full lg:w-1/3 h-[450px]">
             <StudentChart />
+          </div>
+          <div className="w-full lg:w-2/3 h-[450px]">
+            <AttendanceChart />
           </div>
         </div>
       </div>
