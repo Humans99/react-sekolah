@@ -1041,177 +1041,52 @@ export const calendarEvents = [
     start: new Date(2025, 4, 21, 18, 0),
     end: new Date(2025, 4, 21, 18, 50),
   },
-
-  // {
-  //   title: "Physics",
-  //   allDay: false,
-  //   start: new Date(2025, 4, 21, 11, 0),
-  //   end: new Date(2025, 4, 21, 11, 45),
-  // },
-  // {
-  //   title: "Chemistry",
-  //   allDay: false,
-  //   start: new Date(2025, 4, 21, 13, 0),
-  //   end: new Date(2025, 4, 21, 13, 45),
-  // },
-  // {
-  //   title: "History",
-  //   allDay: false,
-  //   start: new Date(2025, 4, 21, 14, 0),
-  //   end: new Date(2025, 4, 21, 14, 45),
-  // },
 ];
 
-// export const calendarEvents = [
-//   {
-//     title: "Math",
-//     allDay: false,
-//     start: "2025-05-19T03:00:00.000Z",
-//     end: "2025-05-19T04:30:00.000Z",
-//   },
-//   {
-//     title: "English",
-//     allDay: false,
-//     start: "2025-05-19T05:00:00.000Z",
-//     end: "2025-05-19T06:45:00.000Z",
-//   },
-//   {
-//     title: "Biology",
-//     allDay: false,
-//     start: "2025-05-18T01:00:00.000Z",
-//     end: "2025-05-18T02:45:00.000Z",
-//   },
-//   {
-//     title: "Physics",
-//     allDay: false,
-//     start: "2025-05-18T08:00:00.000Z",
-//     end: "2025-05-18T09:45:00.000Z",
-//   },
-//   {
-//     title: "Chemistry",
-//     allDay: false,
-//     start: "2025-05-19T09:00:00.000Z",
-//     end: "2025-05-19T11:15:00.000Z",
-//   },
-//   {
-//     title: "History",
-//     allDay: false,
-//     start: "2025-05-20T02:00:00.000Z",
-//     end: "2025-05-20T03:50:00.000Z",
-//   },
-//   {
-//     title: "English",
-//     allDay: false,
-//     start: "2025-05-20T04:30:00.000Z",
-//     end: "2025-05-20T06:15:00.000Z",
-//   },
-//   {
-//     title: "Biology",
-//     allDay: false,
-//     start: "2025-05-21T10:00:00.000Z",
-//     end: "2025-05-21T10:45:00.000Z",
-//   },
-//   {
-//     title: "Physics",
-//     allDay: false,
-//     start: "2025-05-22T06:00:00.000Z",
-//     end: "2025-05-22T08:45:00.000Z",
-//   },
-//   {
-//     title: "History",
-//     allDay: false,
-//     start: "2025-05-22T10:00:00.000Z",
-//     end: "2025-05-22T13:15:00.000Z",
-//   },
-//   {
-//     title: "Math",
-//     allDay: false,
-//     start: "2025-05-23T00:30:00.000Z",
-//     end: "2025-05-23T02:45:00.000Z",
-//   },
-//   {
-//     title: "Biology",
-//     allDay: false,
-//     start: "2025-05-23T03:30:00.000Z",
-//     end: "2025-05-23T05:30:00.000Z",
-//   },
-//   {
-//     title: "Chemistry",
-//     allDay: false,
-//     start: "2025-05-23T07:15:00.000Z",
-//     end: "2025-05-23T09:45:00.000Z",
-//   },
-//   {
-//     title: "History",
-//     allDay: false,
-//     start: "2025-05-23T10:55:00.000Z",
-//     end: "2025-05-23T12:55:00.000Z",
-//   },
-//   {
-//     title: "English",
-//     allDay: false,
-//     start: "2025-05-20T07:00:00.000Z",
-//     end: "2025-05-20T09:45:00.000Z",
-//   },
-//   {
-//     title: "Biology",
-//     allDay: false,
-//     start: "2025-05-20T10:00:00.000Z",
-//     end: "2025-05-20T11:15:00.000Z",
-//   },
-//   {
-//     title: "Physics",
-//     allDay: false,
-//     start: "2025-05-20T11:30:00.000Z",
-//     end: "2025-05-20T12:45:00.000Z",
-//   },
-//   {
-//     title: "History",
-//     allDay: false,
-//     start: "2025-05-18T03:00:00.000Z",
-//     end: "2025-05-18T05:45:00.000Z",
-//   },
-//   {
-//     title: "Math",
-//     allDay: false,
-//     start: "2025-05-21T03:00:00.000Z",
-//     end: "2025-05-21T04:15:00.000Z",
-//   },
-//   {
-//     title: "English",
-//     allDay: false,
-//     start: "2025-05-21T04:30:00.000Z",
-//     end: "2025-05-21T05:45:00.000Z",
-//   },
-//   {
-//     title: "Physics",
-//     allDay: false,
-//     start: "2025-05-21T07:00:00.000Z",
-//     end: "2025-05-21T09:45:00.000Z",
-//   },
-//   {
-//     title: "Chemistry",
-//     allDay: false,
-//     start: "2025-05-22T00:20:00.000Z",
-//     end: "2025-05-22T02:20:00.000Z",
-//   },
-//   {
-//     title: "History",
-//     allDay: false,
-//     start: "2025-05-22T03:30:00.000Z",
-//     end: "2025-05-22T04:45:00.000Z",
-//   },
-// ];
+export const events = [
+  {
+    id: 1,
+    title: "Lorem, ipsum dolor.",
+    time: "10 AM - 12 AM",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+  {
+    id: 2,
+    title: "Lorem, ipsum dolor.",
+    time: "8 AM - 10 AM",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+  {
+    id: 3,
+    title: "Lorem, ipsum dolor.",
+    time: "11 AM - 2 PM",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+];
 
-// export const calendarEvents = [
-//   {
-//     title: "Matematika",
-//     start: new Date("2025-05-25T10:00:00"),
-//     end: new Date("2025-05-25T12:00:00"),
-//   },
-//   {
-//     title: "Bahasa Inggris",
-//     start: new Date("2025-05-26T08:00:00"),
-//     end: new Date("2025-05-26T09:30:00"),
-//   },
-// ];
+export const announcements = [
+  {
+    id: 1,
+    title: "Lorem, ipsum dolor.",
+    time: "2 hari yang lalu",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+  {
+    id: 2,
+    title: "Lorem, ipsum dolor.",
+    time: "4 hari yang lalu",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+  {
+    id: 3,
+    title: "Lorem, ipsum dolor.",
+    time: "5 hari yang lalu",
+    desriction:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sapiente.",
+  },
+];
