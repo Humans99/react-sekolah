@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  font-family: "Inter";
+  /* font-family: "Inter"; */
+  font-family: "Cascadia Code";
 }
 
 @theme {
