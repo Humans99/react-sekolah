@@ -1,4 +1,9 @@
-import { AttendanceChart, StudentChart, UserCard } from "../../components";
+import {
+  AttendanceChart,
+  CashFlowChart,
+  StudentChart,
+  UserCard,
+} from "../../components";
 
 const AdminPage = () => {
   return (
@@ -18,6 +23,9 @@ const AdminPage = () => {
           <div className="w-full lg:w-2/3 h-[450px]">
             <AttendanceChart />
           </div>
+        </div>
+        <div className="w-full h-[500px]">
+          <CashFlowChart />
         </div>
       </div>
     </div>
