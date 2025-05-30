@@ -1,15 +1,45 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "../components";
 import { RoleDashboard } from "../pages/dashboard";
-import { StudentPage, TeacherPage } from "../pages/list";
+import {
+  AnnouncementPage,
+  AssigmentPage,
+  AttendancePage,
+  ClassPage,
+  EventPage,
+  ExamPage,
+  LessonPage,
+  ParentPage,
+  ResultPage,
+  StudentPage,
+  SubjectPage,
+  TeacherPage,
+} from "../pages/list";
+
+// Daftar route yang akan di-map
+const routes = [
+  { path: "", element: <RoleDashboard /> },
+  { path: "teachers", element: <TeacherPage /> },
+  { path: "students", element: <StudentPage /> },
+  { path: "parents", element: <ParentPage /> },
+  { path: "subjects", element: <SubjectPage /> }, // Typo diperbaiki dari 'sbujects'
+  { path: "classes", element: <ClassPage /> },
+  { path: "lessons", element: <LessonPage /> },
+  { path: "exams", element: <ExamPage /> },
+  { path: "assignments", element: <AssigmentPage /> },
+  { path: "results", element: <ResultPage /> },
+  { path: "attendance", element: <AttendancePage /> },
+  { path: "events", element: <EventPage /> },
+  { path: "announcements", element: <AnnouncementPage /> },
+];
 
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<RoleDashboard />} />
-        <Route path="/teachers" element={<TeacherPage />} />
-        <Route path="/students" element={<StudentPage />} />
+        {routes.map(({ path, element }) => (
+          <Route key={path || "index"} path={path} element={element} />
+        ))}
       </Route>
     </Routes>
   );
