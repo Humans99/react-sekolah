@@ -16,9 +16,7 @@ export default function Layout() {
       </div>
       <div className="bg-gray-50 w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] overflow-scroll flex flex-col">
         <Navbar />
-        <div className="p-4">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );
