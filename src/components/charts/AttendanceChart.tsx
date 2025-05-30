@@ -53,6 +53,7 @@ const AttendanceChart = () => {
             contentStyle={{
               borderRadius: "10px",
               borderColor: "lightblue",
+              fontStyle: "italic",
             }}
           />
           <Legend
