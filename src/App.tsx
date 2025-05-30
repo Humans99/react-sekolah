@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./styles/App.css";
-import Layout from "./components/layout";
 import { HomePage, StudentPage, TeacherPage } from "./pages/list";
+import { Layout } from "./components";
 
 function App() {
   // Path *'s
