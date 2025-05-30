@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  font-family: "Inter";
+}
+
 @theme {
   --color-primary: #456fff;
   --color-primary-light: #1a4fff;
