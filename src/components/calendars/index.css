@@ -1,0 +1,118 @@
+/* Month */
+.rbc-row.rbc-month-header .rbc-header {
+  background-color: #456fff;
+  color: white;
+  padding: 5px !important;
+}
+
+/* Week */
+.rbc-row.rbc-time-header-cell .rbc-header {
+  padding: 5px !important;
+  background-color: #456fff;
+  color: white;
+}
+
+.rbc-time-header {
+  min-height: 5% !important;
+  background: #456fff;
+  color: white;
+}
+
+.rbc-time-header .rbc-today {
+  min-height: 5% !important;
+  background: #456fff;
+  color: white;
+}
+
+.rbc-time-header .rbc-label.rbc-time-header-gutter {
+  background-color: #d0d5dd;
+}
+
+.rbc-time-header .rbc-time-header-content .rbc-row.rbc-time-header-cell {
+  height: 100%;
+}
+
+.rbc-button-link {
+  height: 100%;
+}
+
+.rbc-header {
+  border-bottom: none;
+}
+.rbc-time-header .rbc-time-header-content .rbc-allday-cell {
+  /* display: none; */
+  height: 0;
+}
+
+.rbc-day-slot .rbc-event {
+  height: 7.5% !important;
+  /* top: 0% !important; */
+}
+
+.rbc-event {
+  padding: 10px !important;
+  font-size: 12px;
+  background: #465fff;
+  color: #f2f4f7;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 97% !important;
+  gap: 8px;
+  border: none !important;
+}
+
+.rbc-btn-group:first-child {
+  display: none;
+}
+
+.rbc-toolbar-label {
+  text-align: right !important;
+  font-size: medium !important;
+  padding: 0px 20px !important;
+  font-weight: 600 !important;
+}
+
+.rbc-btn-group:last-child {
+  font-size: 13px !important;
+}
+
+.rbc-btn-group:last-child button {
+  border: none !important;
+  border: 1px solid #d0d5dd !important;
+  margin-left: 2px !important;
+}
+
+.rbc-toolbar button.rbc-active {
+  box-shadow: none !important;
+  background-color: #456fff !important;
+  color: white !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .rbc-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .rbc-toolbar .rbc-btn-group {
+    flex-wrap: wrap;
+  }
+
+  .rbc-time-header .rbc-label.rbc-time-header-gutter {
+    font-size: 10px;
+  }
+
+  .rbc-time-content {
+    overflow-x: auto;
+  }
+
+  .rbc-event {
+    font-size: 9px;
+  }
+
+  .rbc-toolbar-label {
+    font-size: 14px !important;
+  }
+}
