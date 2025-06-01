@@ -21,12 +21,12 @@ export const teacherColumns = [
   {
     header: "Telepon",
     key: "phone",
-    className: "hidden lg:table-cell whitespace-nowrap",
+    className: "hidden xl:table-cell whitespace-nowrap",
   },
   {
     header: "Alamat",
     key: "address",
-    className: "hidden lg:table-cell whitespace-nowrap",
+    className: "hidden xl:table-cell whitespace-nowrap",
   },
   {
     header: "Aksi",
