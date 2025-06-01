@@ -64,8 +64,30 @@ function renderRow(item: Teacher) {
 
 const TeacherPage = () => {
   return (
-    <div>
-      <p>Teacher page</p>
+    <div className="bg-white p-4 rounded-xl m-4 flex-1 shadow border border-gray-200">
+      {/*  */}
+      <div className="flex justify-between items-center">
+        <h1 className="hidden md:block text-lg font-semibold">Daftar Guru</h1>
+        <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+          <TableSearch />
+          <div className="flex items-center gap-4 self-end">
+            <button className="w-10 h-10 bg-brand-500 flex items-center justify-center rounded-full shadow-xl cursor-pointer hover:bg-brand-600">
+              <i className="ri-equalizer-line text-white text-lg"></i>
+            </button>
+            <button className="w-10 h-10 bg-brand-500 flex items-center justify-center rounded-full shadow-xl cursor-pointer hover:bg-brand-600">
+              <i className="ri-sort-desc text-white text-lg"></i>
+            </button>
+            {role === "admin" && <FormModal table="teacher" type="create" />}
+          </div>
+        </div>
+      </div>
+
+      {/*  */}
+      <Table
+        columns={teacherColumns}
+        renderRow={renderRow}
+        data={teachersData}
+      />
     </div>
   );
 };
