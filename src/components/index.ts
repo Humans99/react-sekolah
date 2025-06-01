@@ -9,8 +9,12 @@ import Layout from "./layout";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import UserCard from "./UserCard";
+import BigCalendar from "./calendars/BigCalendar";
+import DefaultCalendar from "./calendars/DefaultCalendar";
 
 export {
+  DefaultCalendar,
+  BigCalendar,
   Announcement,
   EventCalendar,
   Navbar,
