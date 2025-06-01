@@ -1,4 +1,6 @@
 import EventCalendar from "./calendars/EventCalendar";
+import DefaultCalendar from "./calendars/DefaultCalendar";
+import BigCalendar from "./calendars/BigCalendar";
 
 import AttendanceChart from "./charts/AttendanceChart";
 import CashFlowChart from "./charts/CashFlowChart";
@@ -9,10 +11,17 @@ import Layout from "./layout";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import UserCard from "./UserCard";
-import BigCalendar from "./calendars/BigCalendar";
-import DefaultCalendar from "./calendars/DefaultCalendar";
+
+import TableSearch from "./table/TableSearch";
+import Table from "./table/Table";
+
+
+import FormModal from "./FormModal";
 
 export {
+  FormModal,
+  Table,
+  TableSearch,
   DefaultCalendar,
   BigCalendar,
   Announcement,
