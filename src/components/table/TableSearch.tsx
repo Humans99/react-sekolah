@@ -1,6 +1,6 @@
 const TableSearch = () => {
   return (
-    <div className="w-full md:w-auto flex  items-center gap-2 text-xs rounded-lg ring-[1px] ring-gray-300 px-2">
+    <div className="w-full md:w-auto flex items-center gap-2 text-xs rounded-md ring-[1px] ring-gray-300 px-2">
       <i className="ri-search-line text-lg text-gray-500"></i>
       <input
         type="text"
