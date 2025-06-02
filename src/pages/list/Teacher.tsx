@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { FormModal, Table, TableSearch } from "../../components";
 import { role, teachersData } from "../../lib/data";
 import { teacherColumns } from "../../lib/list";
@@ -15,6 +16,12 @@ type Teacher = {
 };
 
 function renderRow(item: Teacher) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/teachers/${item.teacherId}`);
+  };
+
   return (
     <tr
       className="border-b border-gray-300 even:bg-slate-50 text-sm hover:bg-slate-200"
@@ -46,7 +53,7 @@ function renderRow(item: Teacher) {
       <td className="whitespace-nowrap hidden xl:table-cell">{item.address}</td>
       <td className="">
         <div className="flex items-center gap-2">
-          <a href="#">
+          <a href={`/teachers/${item.teacherId}`} onClick={handleClick}>
             <button className="w-9 h-9 bg-warning-500 rounded-full shadow items-center justify-center cursor-pointer">
               <i className={`ri-eye-line text-lg text-slate-100`}></i>
             </button>
