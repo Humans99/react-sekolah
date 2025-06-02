@@ -11,14 +11,18 @@ import Layout from "./layout";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import UserCard from "./UserCard";
+import FormModal from "./FormModal";
+import SmallCard from "./SmallCard";
 
 import TableSearch from "./table/TableSearch";
 import Table from "./table/Table";
-
-
-import FormModal from "./FormModal";
+import Shortcut from "./Shortcut";
+import PerformanceChart from "./charts/PerformanceChart";
 
 export {
+  PerformanceChart,
+  Shortcut,
+  SmallCard,
   FormModal,
   Table,
   TableSearch,
