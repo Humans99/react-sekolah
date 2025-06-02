@@ -15,11 +15,15 @@ import {
   SubjectPage,
   TeacherPage,
 } from "../pages/list";
+import { EditTeacher } from "../pages/edit";
 
 // Daftar route yang akan di-map
 const routes = [
   { path: "", element: <RoleDashboard /> },
+  // Teacher
   { path: "teachers", element: <TeacherPage /> },
+  { path: "teachers/:teacherId", element: <EditTeacher /> },
+  //
   { path: "students", element: <StudentPage /> },
   { path: "parents", element: <ParentPage /> },
   { path: "subjects", element: <SubjectPage /> }, // Typo diperbaiki dari 'sbujects'
