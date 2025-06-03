@@ -90,7 +90,7 @@ const FormModal = ({ type, id, table }: Props) => {
       {open && (
         <div className="fixed inset-0 z-40 flex items-center justify-center">
           <div className="absolute inset-0 bg-gray-400/60 backdrop-blur-xl"></div>
-          <div className="bg-white py-10 rounded-3xl relative w-[90%] h-[90%] md:h-fit md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[35%] overflow-y-auto">
+          <div className="bg-white py-10 rounded-3xl relative h-fit w-[90%] md:w-[80%] xl:w-[70%] 2xl:w-[60%] overflow-y-auto">
             <div
               className="absolute top-6 right-6 cursor-pointer"
               onClick={() => setOpen(false)}
