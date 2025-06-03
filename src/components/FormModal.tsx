@@ -64,8 +64,18 @@ const FormModal = ({ type, id, table }: Props) => {
           Ya, Yakin
         </button>
       </form>
+    ) : type === "create" || type === "update" ? (
+      <div className="px-5">
+        <Suspense
+          fallback={
+            <h1 className="text-xl text-gray-600 text-center">Loading ...</h1>
+          }
+        >
+          {forms[table](type, data)}
+        </Suspense>
+      </div>
     ) : (
-      "Update || Edit"
+      "Form not found !"
     );
   };
 
