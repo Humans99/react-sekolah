@@ -31,7 +31,7 @@ const FormModal = ({ type, id, table }: Props) => {
   const size = type === "create" ? "w-10 h-10" : "w-9 h-9";
   const bgColor =
     type === "create"
-      ? "bg-brand-500 hover:bg-brand-600"
+      ? "bg-brand-500 hover:bg-brand-600 transition-all duration-300 hover:-translate-y-0.5"
       : type === "update"
       ? "bg-warning-500"
       : "bg-error-500";
