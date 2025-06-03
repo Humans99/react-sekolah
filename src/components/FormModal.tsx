@@ -1,5 +1,4 @@
 import { lazy, Suspense, useState, type JSX } from "react";
-import { data } from "react-router-dom";
 
 type Props = {
   table:
@@ -27,7 +26,7 @@ const forms: {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
 };
 
-const FormModal = ({ type, id, table }: Props) => {
+const FormModal = ({ type, id, table, data }: Props) => {
   const size = type === "create" ? "w-10 h-10" : "w-9 h-9";
   const bgColor =
     type === "create"
