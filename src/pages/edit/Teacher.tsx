@@ -19,7 +19,6 @@ const data = {
   bloodType: "A",
   birthDay: "2001-11-23",
   gender: "Pria",
-  img: "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
 
 const EditTeacher = () => {
