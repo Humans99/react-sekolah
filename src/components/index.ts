@@ -19,7 +19,13 @@ import Table from "./table/Table";
 import Shortcut from "./Shortcut";
 import PerformanceChart from "./charts/PerformanceChart";
 
+import InputForm from "./forms/InputForm";
+import TeacherForm from "./forms/TeacherForm";
+import SelectForm from "./forms/SelectForm";
 export {
+  SelectForm,
+  TeacherForm,
+  InputForm,
   PerformanceChart,
   Shortcut,
   SmallCard,
