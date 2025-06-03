@@ -95,7 +95,9 @@ const FormModal = ({ type, id, table }: Props) => {
               className="absolute top-6 right-6 cursor-pointer"
               onClick={() => setOpen(false)}
             >
-              <i className="ri-close-fill text-2xl p-2 bg-gray-200 rounded-full text-gray-400/70"></i>
+              <div className="bg-gray-200 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-300/90 transition-all duration-300">
+                <i className="ri-close-fill text-2xl text-gray-400/70"></i>
+              </div>
             </div>
             <Form />
           </div>
