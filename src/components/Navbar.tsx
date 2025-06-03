@@ -9,7 +9,7 @@ const Navbar = () => {
         <input
           type="text"
           name="search"
-          id="search"
+          id="searchBar"
           autoComplete="off"
           placeholder="Cari..."
           className="w-52 p-3 bg-transparent outline-none"
