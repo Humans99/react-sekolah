@@ -27,7 +27,7 @@ const Shortcut = ({ type }: Props) => {
   const { text, color } = ShortcutData[type];
   return (
     <button
-      className={`p-3 rounded-md ${color} text-slate-50 font-medium cursor-pointer shadow-lg`}
+      className={`p-3 rounded-md ${color} text-slate-50 font-medium cursor-pointer shadow-lg transition-all duration-300 hover:-translate-y-0.5`}
     >
       {text}
     </button>
