@@ -23,7 +23,7 @@ export const menuItems = [
       {
         icon: homeIcon,
         label: "Home",
-        href: "/",
+        href: "/dashboard",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
