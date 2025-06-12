@@ -1,6 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Layout } from "../components";
 import { RoleDashboard } from "../pages/dashboard";
+import { EditTeacher } from "../pages/edit";
 import {
   AnnouncementPage,
   AssigmentPage,
@@ -15,11 +16,17 @@ import {
   SubjectPage,
   TeacherPage,
 } from "../pages/list";
-import { EditTeacher } from "../pages/edit";
+import { SignIn, SignUp } from "../pages/auth";
 
 // Daftar route yang akan di-map
+
+const authRoutes = [
+  { path: "login", element: <SignIn /> },
+  { path: "register", element: <SignUp /> },
+];
+
 const routes = [
-  { path: "", element: <RoleDashboard /> },
+  { path: "dashboard", element: <RoleDashboard /> },
   // Teacher
   { path: "teachers", element: <TeacherPage /> },
   { path: "teachers/:teacherId", element: <EditTeacher /> },
@@ -40,6 +47,11 @@ const routes = [
 const MainRoute = () => {
   return (
     <Routes>
+      <Route path="/">
+        {authRoutes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+      </Route>
       <Route path="/" element={<Layout />}>
         {routes.map(({ path, element }) => (
           <Route key={path || "index"} path={path} element={element} />
