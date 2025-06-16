@@ -14,11 +14,6 @@ export const teacherColumns = [
     className: "hidden md:table-cell whitespace-nowrap",
   },
   {
-    header: "Kelas",
-    key: "classes",
-    className: "hidden md:table-cell whitespace-nowrap",
-  },
-  {
     header: "Telepon",
     key: "phone",
     className: "hidden xl:table-cell whitespace-nowrap",
