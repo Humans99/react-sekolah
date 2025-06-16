@@ -1,4 +1,3 @@
-import { role } from "../lib/data";
 import avatar from "../assets/avatar.png";
 const Navbar = () => {
   return (
@@ -26,10 +25,10 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col">
           <span className="text-sm leading-3 font-semibold font-mono">
-            John Doe
+            {localStorage.getItem("username")}
           </span>
           <span className="text-xs text-gray-500 text-right capitalize font-mono">
-            {role}
+            {localStorage.getItem("role")}
           </span>
         </div>
         <img src={avatar} alt="" className="rounded-full w-9 cursor-pointer" />
