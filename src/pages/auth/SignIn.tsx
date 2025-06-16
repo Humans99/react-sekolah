@@ -1,11 +1,25 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { InputForm } from "../../components";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../services";
+import { AxiosError } from "axios";
+
+type LoginData = {
+  login: string;
+  password: string;
+};
+
+type ValidationError = {
+  message: string;
+  errors?: {
+    [key: string]: string[];
+  };
+};
 
 const schema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
+  login: z.string().min(3, { message: "Email of username is required" }),
   password: z
     .string()
     .min(8, { message: "Password must be at least 8 characters long" }),
@@ -14,16 +28,32 @@ const schema = z.object({
 const SignIn = () => {
   const navigate = useNavigate();
   const {
+    setError,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<LoginData>({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log("Form data submitted:", data);
-    navigate("/dashboard");
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await loginUser(data);
+      navigate("/dashboard", { replace: true });
+    } catch (err) {
+      const error = err as AxiosError<ValidationError>;
+      if (error.response?.data?.errors) {
+        const fieldErrors = error.response.data.errors;
+        Object.entries(fieldErrors).forEach(([field, messages]) => {
+          setError(field as keyof LoginData, {
+            type: "manual",
+            message: messages[0],
+          });
+        });
+      } else {
+        alert("Login Failed");
+      }
+    }
   });
   return (
     <div className="bg-gray-200 min-h-screen flex items-center justify-center">
@@ -32,12 +62,12 @@ const SignIn = () => {
         <form action="" onSubmit={onSubmit}>
           <div className="flex flex-col gap-4 mt-4">
             <InputForm
-              label="Email"
-              name="email"
-              type="email"
+              label="Email or Username"
+              name="login"
+              type="text"
               register={register}
               defaultValue=""
-              error={errors.email}
+              error={errors.login}
             />
             <InputForm
               label="Password"
