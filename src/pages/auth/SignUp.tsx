@@ -2,6 +2,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { InputForm } from "../../components";
+import { registerUser } from "../../services";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   username: z
@@ -14,6 +16,7 @@ const schema = z.object({
 });
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,8 +25,13 @@ const SignUp = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log("Form data submitted:", data);
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await registerUser(data);
+      navigate("/login", { replace: true });
+      console.log(registerUser(data));
+    } catch (error) {
+    }
   });
 
   return (
