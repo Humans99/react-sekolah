@@ -1,2 +1,3 @@
 import { loginUser, registerUser } from "./authServices";
-export { loginUser, registerUser };
+import { getAllTeachers } from "./teacherServices";
+export { loginUser, registerUser, getAllTeachers };
