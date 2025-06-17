@@ -16,13 +16,18 @@ import SmallCard from "./SmallCard";
 
 import TableSearch from "./table/TableSearch";
 import Table from "./table/Table";
+import TeacherRow from "./table/TeacherRow";
 import Shortcut from "./Shortcut";
 import PerformanceChart from "./charts/PerformanceChart";
 
 import InputForm from "./forms/InputForm";
 import TeacherForm from "./forms/TeacherForm";
 import SelectForm from "./forms/SelectForm";
+import Pagination from "./Pagination";
+
 export {
+  TeacherRow,
+  Pagination,
   SelectForm,
   TeacherForm,
   InputForm,
