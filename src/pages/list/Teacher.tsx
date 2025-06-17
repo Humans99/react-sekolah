@@ -1,77 +1,53 @@
-import { useNavigate } from "react-router-dom";
-import { FormModal, Table, TableSearch } from "../../components";
-import { role, teachersData } from "../../lib/data";
+import { useCallback, useEffect, useState } from "react";
+import {
+  FormModal,
+  Pagination,
+  Table,
+  TableSearch,
+  TeacherRow,
+} from "../../components";
 import { teacherColumns } from "../../lib/list";
+import { getAllTeachers } from "../../services";
 
 type Teacher = {
   id: number;
-  teacherId: string;
+  code: string;
   name: string;
   email?: string;
-  photo: string;
   phone: string;
-  subjects: string[];
-  classes: string[];
   address: string;
+  subject: { name: string };
+  user: { email: string };
 };
 
-function renderRow(item: Teacher) {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/teachers/${item.teacherId}`);
-  };
-
-  return (
-    <tr
-      className="border-b border-gray-300 even:bg-slate-50 text-sm hover:bg-slate-200"
-      key={item.id}
-    >
-      <td className="flex gap-4 items-center p-4">
-        <img
-          src={item.photo}
-          alt="Image"
-          width={40}
-          height={40}
-          className="rounded-full md:hidden xl:block w-10 h-10 object-cover"
-        />
-        <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <h3 className="text-sm text-gray-400">{item?.email}</h3>
-        </div>
-      </td>
-      <td className="whitespace-nowrap hidden md:table-cell">
-        {item.teacherId}
-      </td>
-      <td className="whitespace-nowrap hidden md:table-cell">
-        {item.subjects.join(",")}
-      </td>
-      <td className="whitespace-nowrap hidden md:table-cell">
-        {item.classes.join(",")}
-      </td>
-      <td className="whitespace-nowrap hidden xl:table-cell">{item.phone}</td>
-      <td className="whitespace-nowrap hidden xl:table-cell">{item.address}</td>
-      <td className="">
-        <div className="flex items-center gap-2">
-          <a href={`/teachers/${item.teacherId}`} onClick={handleClick}>
-            <button className="w-9 h-9 bg-warning-500 rounded-full shadow items-center justify-center cursor-pointer">
-              <i className={`ri-eye-line text-lg text-slate-100`}></i>
-            </button>
-          </a>
-          {role === "admin" && (
-            <>
-              <FormModal table="teacher" type="delete" id={item.id} />
-            </>
-          )}
-        </div>
-      </td>
-    </tr>
-  );
-}
-
 const TeacherPage = () => {
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [links, setLinks] = useState<any>([]);
+  const [role, setRole] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const fetchTeachers = useCallback(async (url = "/teachers") => {
+    try {
+      const data = await getAllTeachers(url);
+      setLinks(data.meta.links);
+      setRole(localStorage.getItem("role"));
+      setTeachers(data.data);
+    } catch (error) {
+      console.error("Gagal memuat data guru", error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  useEffect(() => {
+    fetchTeachers();
+  }, [fetchTeachers]);
+
+  if (loading) {
+    return <p className="m-auto">Loading ....</p>;
+  }
+
   return (
-    <div className="bg-white p-4 rounded-xl m-4 flex-1 shadow border border-gray-200">
+    <div className="bg-white p-4 rounded-xl m-4 flex-1 shadow border border-gray-200 overflow-x-auto">
       {/*  */}
       <div className="flex justify-between items-center">
         <h1 className="hidden md:block text-lg font-semibold">Daftar Guru</h1>
@@ -92,9 +68,13 @@ const TeacherPage = () => {
       {/*  */}
       <Table
         columns={teacherColumns}
-        renderRow={renderRow}
-        data={teachersData}
+        renderRow={(item) => (
+          <TeacherRow item={item} role={role} key={item.id} />
+        )}
+        data={teachers}
       />
+
+      <Pagination links={links} onPageChange={fetchTeachers} />
     </div>
   );
 };
