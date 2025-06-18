@@ -29,7 +29,7 @@ const routes = [
   { path: "dashboard", element: <RoleDashboard /> },
   // Teacher
   { path: "teachers", element: <TeacherPage /> },
-  { path: "teachers/:teacherId", element: <EditTeacher /> },
+  { path: "teachers/code/:teacherCode", element: <EditTeacher /> },
   //
   { path: "students", element: <StudentPage /> },
   { path: "parents", element: <ParentPage /> },
