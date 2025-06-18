@@ -61,7 +61,12 @@ const SelectForm = ({
         {...inputProps}
       >
         <option disabled value="">
-          --Pilih {name === "gender" ? "Golongan Darah" : "Jenis Kelamin"}
+          --Pilih{" "}
+          {name === "gender"
+            ? "Jenis Kelamain"
+            : name === "bloodType"
+            ? "Golongan Darah"
+            : "Mata Pelajaran"}
         </option>
         {dataSelect[name].map((item) => (
           <option value={item.key} key={item.key}>
