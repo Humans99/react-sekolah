@@ -9,22 +9,33 @@ type Option = {
 type Props = {
   label: string;
   register: any;
-  name: "gender" | "bloodType";
+  name: "gender" | "bloodType" | "subject";
   error?: FieldError;
   defaultValue?: string;
   inputProps?: React.InputHTMLAttributes<HTMLSelectElement>;
 };
 
-const dataSelect: Record<"gender" | "bloodType", Option[]> = {
+const dataSelect: Record<"gender" | "bloodType" | "subject", Option[]> = {
   gender: [
     { key: "pria", value: "Pria" },
     { key: "wanita", value: "Wanita" },
   ],
   bloodType: [
-    { key: "a", value: "A" },
-    { key: "b", value: "B" },
-    { key: "ab", value: "AB" },
-    { key: "o", value: "O" },
+    { key: "A", value: "A" },
+    { key: "B", value: "B" },
+    { key: "AB", value: "AB" },
+    { key: "O", value: "O" },
+  ],
+  subject: [
+    { key: "1", value: "Matematika" },
+    { key: "2", value: "IPA" },
+    { key: "3", value: "IPS" },
+    { key: "4", value: "Bahasa Indonesia" },
+    { key: "5", value: "Bahasa Inggris" },
+    { key: "6", value: "Seni Budaya" },
+    { key: "7", value: "PJOK" },
+    { key: "8", value: "PKN" },
+    { key: "9", value: "Pendidikan Agama" },
   ],
 };
 
