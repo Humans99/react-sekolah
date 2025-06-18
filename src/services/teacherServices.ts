@@ -15,7 +15,17 @@ export const deleteTeacher = async (code: string) => {
     const response = await api.delete(`/teachers/code/${code}`);
     return response.data;
   } catch (error) {
-    console.log("Error delete teachers data", error);
+    console.log("Error delete teachers data: ", error);
     throw error;
   }
 };
+
+export const createTeacher = async () => {
+  try {
+    const response = await api.post('/teachers')
+    return response.data
+  } catch (error) {
+    console.log("Error create teachers data: ", error)
+    throw error
+  }
+}
