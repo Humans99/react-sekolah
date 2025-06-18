@@ -17,8 +17,8 @@ type Props = {
 
 const dataSelect: Record<"gender" | "bloodType" | "subject", Option[]> = {
   gender: [
-    { key: "pria", value: "Pria" },
-    { key: "wanita", value: "Wanita" },
+    { key: "Pria", value: "Pria" },
+    { key: "Wanita", value: "Wanita" },
   ],
   bloodType: [
     { key: "A", value: "A" },
