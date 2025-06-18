@@ -24,13 +24,12 @@ const TeacherPage = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [links, setLinks] = useState<any>([]);
   const [role, setRole] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(true);
 
   const fetchTeachers = useCallback(async (url = "/teachers") => {
     try {
       const data = await getAllTeachers(url);
       setLinks(data.meta.links);
-      setRole(localStorage.getItem("role"));
       setTeachers(data.data);
     } catch (error) {
       console.error("Gagal memuat data guru", error);
@@ -40,10 +39,37 @@ const TeacherPage = () => {
   }, []);
   useEffect(() => {
     fetchTeachers();
+    setRole(localStorage.getItem("role"));
   }, [fetchTeachers]);
 
   if (loading) {
-    return <p className="m-auto">Loading ....</p>;
+    return (
+      <div className="m-auto">
+        <div className="flex items-center gap-4">
+          <svg
+            className="animate-spin h-5 w-5 text-gray-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-50"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="3"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            ></path>
+          </svg>
+          <p className="text-sm text-gray-500">Loading ....</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -69,7 +95,12 @@ const TeacherPage = () => {
       <Table
         columns={teacherColumns}
         renderRow={(item) => (
-          <TeacherRow item={item} role={role} key={item.id} />
+          <TeacherRow
+            item={item}
+            role={role}
+            key={item.id}
+            onSuccessDelete={() => fetchTeachers()}
+          />
         )}
         data={teachers}
       />
