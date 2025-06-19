@@ -8,8 +8,9 @@ const schema = z.object({
   email: z.string().email({ message: "invalid email address" }),
   nip: z
     .string()
-    .min(8, { message: "password must be at least 8 characters long!" }),
-  fullName: z.string().min(1, { message: "fullname is required!" }),
+    .min(18, { message: "nip must be atleast 18 number" })
+    .max(18, { message: "nip must be atleast 18 number" }),
+  name: z.string().min(1, { message: "name is required!" }),
   phone: z
     .string()
     .min(11, { message: "phone number must be at least 11 number!" }),
