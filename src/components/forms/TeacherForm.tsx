@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputForm from "./InputForm";
 import SelectForm from "./SelectForm";
+import { createTeacher } from "../../services";
+import { useState } from "react";
 
 const schema = z.object({
   email: z.string().email({ message: "invalid email address" }),
@@ -41,8 +43,18 @@ const TeacherForm = ({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log("data form: ", data);
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      setLoading(true);
+      await createTeacher(data);
+      onSuccessCreate?.();
+    } catch (error) {
+      console.log("Error to create teacher. ", error);
+    } finally {
+      setLoading(false);
+    }
   });
   return (
     <form action="" className="flex gap-2 flex-col" onSubmit={onSubmit}>
