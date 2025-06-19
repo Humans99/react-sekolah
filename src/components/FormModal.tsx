@@ -134,7 +134,7 @@ const FormModal = ({ type, table, code, data, onSuccessDelete }: Props) => {
           <div
             role="dialog"
             aria-modal="true"
-            className="bg-white py-10 rounded-3xl relative h-fit w-[90%] md:w-[80%] xl:w-[70%] 2xl:w-[60%] overflow-y-auto"
+            className="bg-white py-10 rounded-3xl relative h-fit w-[90%] md:w-[80%] lg:w-[70%] xl:w-[55%] overflow-y-auto"
           >
             <div
               className="absolute top-6 right-6 cursor-pointer"
