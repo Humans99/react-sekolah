@@ -47,63 +47,6 @@ const TeacherForm = ({
       <h1 className="text-gray-600 font-medium">
         {type === "create" ? "Tambah" : "Edit"} Data Guru
       </h1>
-      {/* <div className="flex flex-col lg:flex-row gap-6 -mt-6">
-        <InputForm
-          label="Nama"
-          name="name"
-          defaultValue={data?.name}
-          register={register}
-          error={errors?.name}
-          type="text"
-        />
-        <InputForm
-          label="Email"
-          name="email"
-          defaultValue={data?.email}
-          register={register}
-          error={errors?.email}
-          type="text"
-        />
-        <InputForm
-          label="Telepon"
-          name="phone"
-          defaultValue={data?.phone}
-          register={register}
-          error={errors?.phone}
-          type="number"
-        />
-        <InputForm
-          label="Alamat"
-          name="address"
-          defaultValue={data?.address}
-          register={register}
-          error={errors?.address}
-          type="text"
-        />
-      </div> */}
-      {/* <div className="flex flex-col lg:flex-row gap-6 -mt-6">
-        <SelectForm
-          label="Golongan Darah"
-          name="bloodType"
-          defaultValue={data?.bloodType}
-          register={register}
-          error={errors?.bloodType}
-        />
-        <SelectForm
-          label="Jenis Kelamin"
-          name="gender"
-          defaultValue={data?.gender}
-          register={register}
-          error={errors?.gender}
-        />
-        <SelectForm
-          label="Mata Pelajaran"
-          name="subject"
-          defaultValue={data?.subject}
-          register={register}
-          error={errors?.subject}
-        />
-      </div> */}
       <span className="text-sm text-gray-600 font-medium">Data Personal</span>
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
         <InputForm
