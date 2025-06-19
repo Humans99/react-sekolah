@@ -27,6 +27,7 @@ import Pagination from "./Pagination";
 import SuccessToast from "./toast/Success";
 
 export {
+  SuccessToast,
   TeacherRow,
   Pagination,
   SelectForm,
