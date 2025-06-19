@@ -15,11 +15,13 @@ const schema = z.object({
     .string()
     .min(11, { message: "phone number must be at least 11 number!" }),
   address: z.string().min(1, { message: "address is required!" }),
-  bloodType: z.enum(["a", "b", "ab", "o"], {
+  bloodType: z.enum(["A", "B", "AB", "O"], {
     message: "blood type is required !",
   }),
-  birthDay: z.string().min(1, { message: "birthday is required!" }),
-  gender: z.enum(["pria", "wanita"], { message: "gender is required!" }),
+  gender: z.enum(["Pria", "Wanita"], { message: "gender is required!" }),
+  subject: z.enum(["1", "2", "3", "4", "5", "6", "7", "8", "9"], {
+    message: "Subject is required",
+  }),
 });
 
 const TeacherForm = ({
