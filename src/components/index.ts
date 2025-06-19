@@ -24,6 +24,7 @@ import InputForm from "./forms/InputForm";
 import TeacherForm from "./forms/TeacherForm";
 import SelectForm from "./forms/SelectForm";
 import Pagination from "./Pagination";
+import SuccessToast from "./toast/Success";
 
 export {
   TeacherRow,
