@@ -27,9 +27,11 @@ const schema = z.object({
 const TeacherForm = ({
   type,
   data,
+  onSuccessCreate,
 }: {
   type: "create" | "update";
   data?: any;
+  onSuccessCreate?: () => void;
 }) => {
   const {
     register,
