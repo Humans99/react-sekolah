@@ -127,7 +127,7 @@ const TeacherForm = ({
           type="date"
         />
       </div>
-      <button className="text-white bg-brand-500 px-4 py-2 rounded-lg hover:bg-brand-600 cursor-pointer shadow-lg transition-all duration-300">
+      <button className="text-white mt-4 -mb-5 bg-brand-500 px-4 py-2 rounded-lg hover:bg-brand-600 cursor-pointer shadow-lg transition-all duration-300">
         Submit
       </button>
     </form>
