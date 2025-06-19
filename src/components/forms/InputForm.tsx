@@ -28,8 +28,10 @@ const InputForm = ({
         {label}
       </div>
       <input
-        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:ring-brand-500 focus:pl-3 focus:ring-[1.5px] transition-all duration-300 w-full placeholder:text-[10px] ${
-          error ? "ring-error-300" : "ring-gray-300"
+        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:pl-3 focus:ring-[1.5px] transition-all duration-300 w-full placeholder:text-[10px] ${
+          error
+            ? "ring-error-300 focus:ring-error-500"
+            : "ring-gray-300 focus:ring-brand-500"
         }`}
         type={type ?? "text"}
         name={name}
