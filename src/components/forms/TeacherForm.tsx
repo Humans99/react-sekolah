@@ -19,7 +19,7 @@ const schema = z.object({
     message: "blood type is required !",
   }),
   gender: z.enum(["Pria", "Wanita"], { message: "gender is required!" }),
-  subject: z.enum(["1", "2", "3", "4", "5", "6", "7", "8", "9"], {
+  subject_id: z.enum(["1", "2", "3", "4", "5", "6", "7", "8", "9"], {
     message: "Subject is required",
   }),
 });
@@ -110,10 +110,10 @@ const TeacherForm = ({
         />
         <SelectForm
           label="Mata Pelajaran"
-          name="subject"
-          defaultValue={data?.subject}
+          name="subject_id"
+          defaultValue={data?.subject_id}
           register={register}
-          error={errors?.subject}
+          error={errors?.subject_id}
         />
       </div>
       <button className="text-white mt-4 -mb-5 bg-brand-500 px-4 py-2 rounded-lg hover:bg-brand-600 cursor-pointer shadow-lg transition-all duration-300">
