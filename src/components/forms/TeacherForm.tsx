@@ -1,10 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { createTeacher } from "../../services";
 import InputForm from "./InputForm";
 import SelectForm from "./SelectForm";
-import { createTeacher } from "../../services";
-import { useState } from "react";
 
 const schema = z.object({
   email: z.string().email({ message: "invalid email address" }),
