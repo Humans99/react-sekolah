@@ -86,7 +86,13 @@ const TeacherPage = () => {
             <button className="w-10 h-10 bg-brand-500 flex items-center justify-center rounded-full shadow-xl cursor-pointer hover:bg-brand-600 hover:-translate-y-0.5 transition-all duration-300">
               <i className="ri-sort-desc text-white text-lg"></i>
             </button>
-            {role === "admin" && <FormModal table="teacher" type="create" />}
+            {role === "admin" && (
+              <FormModal
+                table="teacher"
+                type="create"
+                onSuccessCreate={fetchTeachers}
+              />
+            )}
           </div>
         </div>
       </div>
