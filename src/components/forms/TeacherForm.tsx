@@ -43,7 +43,7 @@ const TeacherForm = ({
     console.log("data form: ", data);
   });
   return (
-    <form action="" className="flex gap-8 flex-col" onSubmit={onSubmit}>
+    <form action="" className="flex gap-2 flex-col" onSubmit={onSubmit}>
       <h1 className="text-gray-600 font-medium">
         {type === "create" ? "Tambah" : "Edit"} Data Guru
       </h1>
