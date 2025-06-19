@@ -5,6 +5,8 @@ import { z } from "zod";
 import { createTeacher } from "../../services";
 import InputForm from "./InputForm";
 import SelectForm from "./SelectForm";
+import { toast } from "sonner";
+import SuccessToast from "../toast/Success";
 
 const schema = z.object({
   email: z.string().email({ message: "invalid email address" }),
@@ -48,9 +50,11 @@ const TeacherForm = ({
   const onSubmit = handleSubmit(async (data) => {
     try {
       setLoading(true);
-      await createTeacher(data);
+      const response = await createTeacher(data);
+      SuccessToast({message: response.message})
       onSuccessCreate?.();
     } catch (error) {
+      toast.error("Error to create teacher. ");
       console.log("Error to create teacher. ", error);
     } finally {
       setLoading(false);
