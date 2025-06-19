@@ -22,15 +22,22 @@ type Props = {
   data?: any;
   code?: string;
   onSuccessDelete?: () => void;
+  onSuccessCreate?: () => void;
 };
 
 const TeacherForm = lazy(() => import("./forms/TeacherForm"));
 
 const forms: Record<
   TableType,
-  (type: Exclude<FormType, "delete">, data?: any) => JSX.Element
+  (
+    type: Exclude<FormType, "delete">,
+    data?: any,
+    onSuccess?: () => void
+  ) => JSX.Element
 > = {
-  teacher: (type, data) => <TeacherForm type={type} data={data} />,
+  teacher: (type, data, onSuccessCreate) => (
+    <TeacherForm type={type} data={data} onSuccessCreate={onSuccessCreate} />
+  ),
 };
 
 const DeleteForm = ({
@@ -89,7 +96,14 @@ const DeleteForm = ({
   </form>
 );
 
-const FormModal = ({ type, table, code, data, onSuccessDelete }: Props) => {
+const FormModal = ({
+  type,
+  table,
+  code,
+  data,
+  onSuccessDelete,
+  onSuccessCreate,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -153,7 +167,11 @@ const FormModal = ({ type, table, code, data, onSuccessDelete }: Props) => {
             ) : type === "create" || type === "update" ? (
               <div className="px-5">
                 <Suspense fallback={<p className="text-center">Loading ...</p>}>
-                  {forms[table](type, data)}
+                  {forms[table](type, data, () => {
+                    setOpen(false);
+                    onSuccessDelete?.();
+                    onSuccessCreate?.();
+                  })}
                 </Suspense>
               </div>
             ) : (
