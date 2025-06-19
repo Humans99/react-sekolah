@@ -47,20 +47,17 @@ const TeacherForm = ({
       <h1 className="text-gray-600 font-medium">
         {type === "create" ? "Tambah" : "Edit"} Data Guru
       </h1>
-      <span className="text-sm text-gray-500 font-medium">
-        Data Auntentikasi
-      </span>
-      <div className="flex flex-col gap-6 -mt-6 lg:flex-row ">
+      {/* <div className="flex flex-col lg:flex-row gap-6 -mt-6">
         <InputForm
-          label="username"
-          name="username"
-          defaultValue={data?.username}
+          label="Nama"
+          name="name"
+          defaultValue={data?.name}
           register={register}
-          error={errors?.username}
+          error={errors?.name}
           type="text"
         />
         <InputForm
-          label="email"
+          label="Email"
           name="email"
           defaultValue={data?.email}
           register={register}
@@ -68,26 +65,7 @@ const TeacherForm = ({
           type="text"
         />
         <InputForm
-          label="password"
-          name="password"
-          defaultValue={data?.password}
-          register={register}
-          error={errors?.password}
-          type="password"
-        />
-      </div>
-      <span className="text-sm text-gray-600 font-medium">Data Personal</span>
-      <div className="flex flex-col lg:flex-row gap-6 -mt-6">
-        <InputForm
-          label="nama lengkap"
-          name="fullName"
-          defaultValue={data?.fullName}
-          register={register}
-          error={errors?.fullName}
-          type="text"
-        />
-        <InputForm
-          label="telepon"
+          label="Telepon"
           name="phone"
           defaultValue={data?.phone}
           register={register}
@@ -95,36 +73,104 @@ const TeacherForm = ({
           type="number"
         />
         <InputForm
-          label="alamat"
+          label="Alamat"
           name="address"
           defaultValue={data?.address}
           register={register}
           error={errors?.address}
           type="text"
         />
-      </div>
-      <div className="flex flex-col lg:flex-row gap-6 -mt-6">
+      </div> */}
+      {/* <div className="flex flex-col lg:flex-row gap-6 -mt-6">
         <SelectForm
-          label="golongan darah"
+          label="Golongan Darah"
           name="bloodType"
           defaultValue={data?.bloodType}
           register={register}
           error={errors?.bloodType}
         />
         <SelectForm
-          label="jenis kelamin"
+          label="Jenis Kelamin"
           name="gender"
           defaultValue={data?.gender}
           register={register}
           error={errors?.gender}
         />
-        <InputForm
-          label="tanggal lahir"
-          name="birthDay"
-          defaultValue={data?.birthDay}
+        <SelectForm
+          label="Mata Pelajaran"
+          name="subject"
+          defaultValue={data?.subject}
           register={register}
-          error={errors?.birthDay}
-          type="date"
+          error={errors?.subject}
+        />
+      </div> */}
+      <span className="text-sm text-gray-600 font-medium">Data Personal</span>
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+        <InputForm
+          label="Nama"
+          name="name"
+          placeholder="John Doe"
+          defaultValue={data?.name}
+          register={register}
+          error={errors?.name}
+          type="text"
+        />
+        <InputForm
+          label="Nomor Induk Pegawai"
+          name="nip"
+          placeholder="284758395718392950"
+          defaultValue={data?.nip}
+          register={register}
+          error={errors?.nip}
+          type="text"
+        />
+        <InputForm
+          label="Email"
+          name="email"
+          placeholder="johndoe@example.com"
+          defaultValue={data?.email}
+          register={register}
+          error={errors?.email}
+          type="email"
+        />
+        <InputForm
+          label="Nomor Telepon"
+          name="phone"
+          placeholder="081592860391"
+          defaultValue={data?.phone}
+          register={register}
+          error={errors?.phone}
+          type="number"
+        />
+        <InputForm
+          label="Alamat"
+          name="address"
+          placeholder="Jl. Kebangkitan Nasional No. 950, Gorontalo"
+          defaultValue={data?.address}
+          register={register}
+          error={errors?.address}
+          type="text"
+        />
+        <SelectForm
+          label="Jenis Kelamin"
+          name="gender"
+          defaultValue={data?.gender}
+          register={register}
+          error={errors?.gender}
+        />
+        <SelectForm
+          label="Golongan Darah"
+          name="bloodType"
+          defaultValue={data?.bloodType}
+          register={register}
+          error={errors?.bloodType}
+        />
+        <SelectForm
+          label="Mata Pelajaran"
+          name="subject"
+          defaultValue={data?.subject}
+          register={register}
+          error={errors?.subject}
         />
       </div>
       <button className="text-white mt-4 -mb-5 bg-brand-500 px-4 py-2 rounded-lg hover:bg-brand-600 cursor-pointer shadow-lg transition-all duration-300">
