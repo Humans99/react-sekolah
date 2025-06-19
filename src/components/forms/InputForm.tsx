@@ -7,6 +7,7 @@ type Props = {
   register: any;
   name: string;
   defaultValue?: string;
+  placeholder: string;
   error?: FieldError;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 };
@@ -17,6 +18,7 @@ const InputForm = ({
   register,
   name,
   defaultValue,
+  placeholder,
   error,
   inputProps,
 }: Props) => {
@@ -26,13 +28,13 @@ const InputForm = ({
         {label}
       </div>
       <input
-        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:ring-brand-500 focus:pl-3 focus:ring-[1.5px] transition-all duration-300 w-full ${
+        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:ring-brand-500 focus:pl-3 focus:ring-[1.5px] transition-all duration-300 w-full placeholder:text-[10px] ${
           error ? "ring-error-300" : "ring-gray-300"
         }`}
         type={type ?? "text"}
         name={name}
         id={name}
-        placeholder={`${label} ......`}
+        placeholder={placeholder}
         autoComplete="off"
         {...register(name)}
         defaultValue={defaultValue}
