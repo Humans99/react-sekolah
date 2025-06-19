@@ -5,13 +5,8 @@ import InputForm from "./InputForm";
 import SelectForm from "./SelectForm";
 
 const schema = z.object({
-  username: z
-    .string()
-    .min(3, { message: "username must be at least 3 characters long!" })
-    .max(20, { message: "username be at most 20 characters long!" }),
-  // age: z.number().min(10, { message: "age too low" }),
   email: z.string().email({ message: "invalid email address" }),
-  password: z
+  nip: z
     .string()
     .min(8, { message: "password must be at least 8 characters long!" }),
   fullName: z.string().min(1, { message: "fullname is required!" }),
