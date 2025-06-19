@@ -20,12 +20,12 @@ export const deleteTeacher = async (code: string) => {
   }
 };
 
-export const createTeacher = async () => {
+export const createTeacher = async (data: any) => {
   try {
-    const response = await api.post('/teachers')
-    return response.data
+    const response = await api.post("/teachers", data);
+    return response.data;
   } catch (error) {
-    console.log("Error create teachers data: ", error)
-    throw error
+    console.log("Error create teachers data: ", error);
+    throw error;
   }
-}
+};
