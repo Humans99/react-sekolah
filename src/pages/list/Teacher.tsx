@@ -7,7 +7,7 @@ import {
   TeacherRow,
 } from "../../components";
 import { teacherColumns } from "../../lib/list";
-import { getAllTeachers } from "../../services";
+import { getAllTeachers } from "@/services";
 
 type Teacher = {
   id: number;
