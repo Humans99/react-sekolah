@@ -65,6 +65,7 @@ const SignIn = () => {
               label="Email or Username"
               name="login"
               type="text"
+              placeholder="email or username"
               register={register}
               defaultValue=""
               error={errors.login}
@@ -73,6 +74,7 @@ const SignIn = () => {
               label="Password"
               name="password"
               type="password"
+              placeholder="********"
               register={register}
               defaultValue=""
               error={errors.password}
