@@ -1,6 +1,7 @@
 // FormModal.tsx
 import React, { lazy, Suspense, useState, type JSX } from "react";
 import { deleteTeacher } from "../services";
+import SuccessToast from "./toast/Success";
 
 type TableType = "teacher";
 // | "teacher"
@@ -111,8 +112,9 @@ const FormModal = ({
     e.preventDefault();
     setLoading(true);
     try {
-      await deleteTeacher(code!);
+      const res = await deleteTeacher(code!);
       setOpen(false);
+      SuccessToast({message: res.message})
       onSuccessDelete?.();
     } catch (error) {
       console.error("Gagal menghapus data guru", error);
