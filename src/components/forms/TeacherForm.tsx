@@ -83,7 +83,7 @@ const TeacherForm = ({
           defaultValue={data?.nip}
           register={register}
           error={errors?.nip}
-          type="text"
+          type="number"
         />
         <InputForm
           label="Email"
