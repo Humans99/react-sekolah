@@ -8,6 +8,7 @@ import {
 } from "../../components";
 import { teacherColumns } from "../../lib/list";
 import { getAllTeachers } from "@/services";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Teacher = {
   id: number;
@@ -44,29 +45,39 @@ const TeacherPage = () => {
 
   if (loading) {
     return (
-      <div className="m-auto">
-        <div className="flex items-center gap-4">
-          <svg
-            className="animate-spin h-5 w-5 text-gray-800"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-50"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="3"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-            ></path>
-          </svg>
-          <p className="text-sm text-gray-800">Loading ....</p>
+      <div className="bg-white p-4 rounded-xl m-4 flex-1 shadow border border-gray-200 overflow-x-auto">
+        <div className="flex justify-between items-center">
+          <Skeleton className="h-4 w-[20%] bg-gray-400" />
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+            <Skeleton className="h-4 w-[20%] bg-gray-300" />
+            <div className="flex items-center gap-4 self-end">
+              <Skeleton className="h-10 w-10 rounded-full bg-gray-300" />
+              <Skeleton className="h-10 w-10 rounded-full bg-gray-300" />
+              {role === "admin" && (
+                <Skeleton className="h-10 w-10 rounded-full bg-gray-300" />
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-4 w-full">
+          {[...Array(10)].map((_, i) => (
+            <div className="flex gap-5 p-4 items-center" key={i}>
+              <Skeleton className="w-10 h-10 rounded-full bg-gray-400" />
+              <div className="flex flex-col justify-center gap-2">
+                <Skeleton className="h-4 w-[240px] bg-gray-400" />
+                <Skeleton className="h-4 w-[180px] bg-gray-400" />
+              </div>
+              <Skeleton className="h-4 w-[140px] bg-gray-400 ml-5" />
+              <Skeleton className="h-4 w-[200px] bg-gray-400 ml-5" />
+              <Skeleton className="h-4 w-[200px] bg-gray-400 ml-5" />
+              <Skeleton className="h-4 w-[480px] bg-gray-400 ml-5" />
+              <div className="flex gap-3">
+                <Skeleton className="w-10 h-10 rounded-full bg-gray-400 ml-5" />
+                <Skeleton className="w-10 h-10 rounded-full bg-gray-400" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );
