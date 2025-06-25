@@ -9,8 +9,12 @@ import {
   getTeacher,
 } from "./teacherServices";
 
+// Student
+import { getAllStudents } from "./studentServices";
+
 // Export
 export {
+  getAllStudents,
   getTeacher,
   loginUser,
   registerUser,
