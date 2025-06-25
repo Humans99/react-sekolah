@@ -9,13 +9,16 @@ type Option = {
 type Props = {
   label: string;
   register: any;
-  name: "gender" | "bloodType" | "subject_id";
+  name: "gender" | "bloodType" | "subject_id" | "grade_id" | "class_id";
   error?: FieldError;
   defaultValue?: string;
   inputProps?: React.InputHTMLAttributes<HTMLSelectElement>;
 };
 
-const dataSelect: Record<"gender" | "bloodType" | "subject_id", Option[]> = {
+const dataSelect: Record<
+  "gender" | "bloodType" | "subject_id" | "grade_id" | "class_id",
+  Option[]
+> = {
   gender: [
     { key: "Pria", value: "Pria" },
     { key: "Wanita", value: "Wanita" },
@@ -36,6 +39,22 @@ const dataSelect: Record<"gender" | "bloodType" | "subject_id", Option[]> = {
     { key: "7", value: "PJOK" },
     { key: "8", value: "PKN" },
     { key: "9", value: "Pendidikan Agama" },
+  ],
+  grade_id: [
+    { key: "1", value: "Kelas 7" },
+    { key: "2", value: "Kelas 8" },
+    { key: "3", value: "Kelas 9" },
+  ],
+  class_id: [
+    { key: "1", value: "A" },
+    { key: "2", value: "B" },
+    { key: "3", value: "C" },
+    { key: "4", value: "D" },
+    { key: "5", value: "E" },
+    { key: "6", value: "F" },
+    { key: "7", value: "G" },
+    { key: "8", value: "H" },
+    { key: "9", value: "I" },
   ],
 };
 
@@ -66,6 +85,10 @@ const SelectForm = ({
             ? "Jenis Kelamain"
             : name === "bloodType"
             ? "Golongan Darah"
+            : name === "class_id"
+            ? "Kelas"
+            : name === "grade_id"
+            ? "Tingkat Kelas"
             : "Mata Pelajaran"}
         </option>
         {dataSelect[name].map((item) => (
