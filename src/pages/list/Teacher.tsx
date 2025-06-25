@@ -5,8 +5,8 @@ import {
   Table,
   TableSearch,
   TeacherRow,
-} from "../../components";
-import { teacherColumns } from "../../lib/list";
+} from "@/components";
+import { teacherColumns } from "@/lib/list";
 import { getAllTeachers } from "@/services";
 import { Skeleton } from "@/components/ui/skeleton";
 
