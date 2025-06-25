@@ -28,3 +28,34 @@ export const teacherColumns = [
     key: "action",
   },
 ];
+
+export const studentColumns = [
+  {
+    header: "Info",
+    key: "info",
+  },
+  {
+    header: "Student ID",
+    key: "studentId",
+    className: "hidden md:table-cell whitespace-nowrap",
+  },
+  {
+    header: "Grade",
+    key: "grade",
+    className: "hidden md:table-cell whitespace-nowrap",
+  },
+  {
+    header: "Phone",
+    key: "phone",
+    className: "hidden xl:table-cell whitespace-nowrap",
+  },
+  {
+    header: "Address",
+    key: "address",
+    className: "hidden xl:table-cell whitespace-nowrap",
+  },
+  {
+    header: "Aksi",
+    key: "action",
+  },
+];
