@@ -8,6 +8,7 @@ type Props = {
   name: string;
   defaultValue?: string;
   placeholder: string;
+  disabled?: boolean;
   error?: FieldError;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 };
@@ -20,6 +21,7 @@ const InputForm = ({
   defaultValue,
   placeholder,
   error,
+  disabled,
   inputProps,
 }: Props) => {
   return (
@@ -28,7 +30,7 @@ const InputForm = ({
         {label}
       </div>
       <input
-        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:pl-3 focus:ring-[1.5px] transition-all duration-300 w-full placeholder:text-[10px] ${
+        className={`text-gray-600 font-medium ring-[1.5px] p-2 rounded-md text-sm outline-none focus:pl-3 focus:ring-[1.5px] disabled:cursor-not-allowed disabled:bg-gray-200 transition-all duration-300 w-full placeholder:text-[10px] ${
           error
             ? "ring-error-300 focus:ring-error-500"
             : "ring-gray-300 focus:ring-brand-500"
@@ -37,6 +39,7 @@ const InputForm = ({
         name={name}
         id={name}
         placeholder={placeholder}
+        disabled={disabled ?? false}
         autoComplete="off"
         {...register(name)}
         defaultValue={defaultValue}
