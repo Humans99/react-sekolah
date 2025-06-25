@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useState, type JSX } from "react";
 import { deleteTeacher } from "../services";
 import SuccessToast from "./toast/Success";
 
-type TableType = "teacher";
+type TableType = "teacher" | "student";
 // | "teacher"
 // | "student"
 // | "parent"
@@ -27,6 +27,7 @@ type Props = {
 };
 
 const TeacherForm = lazy(() => import("./forms/TeacherForm"));
+const StudentForm = lazy(() => import("./forms/StudentForm"));
 
 const forms: Record<
   TableType,
@@ -38,6 +39,9 @@ const forms: Record<
 > = {
   teacher: (type, data, onSuccessCreate) => (
     <TeacherForm type={type} data={data} onSuccessCreate={onSuccessCreate} />
+  ),
+  student: (type, data, onSuccessCreate) => (
+    <StudentForm type={type} data={data} onSuccessDelete={onSuccessCreate} />
   ),
 };
 
@@ -114,7 +118,7 @@ const FormModal = ({
     try {
       const res = await deleteTeacher(code!);
       setOpen(false);
-      SuccessToast({message: res.message})
+      SuccessToast({ message: res.message });
       onSuccessDelete?.();
     } catch (error) {
       console.error("Gagal menghapus data guru", error);
