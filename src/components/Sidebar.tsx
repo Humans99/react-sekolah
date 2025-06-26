@@ -1,7 +1,11 @@
-import { role } from "../lib/data";
+import { useEffect, useState } from "react";
 import { menuItems } from "../lib/menu";
 
 const Sidebar = () => {
+  const [role, setRole] = useState<string | null>(null);
+  useEffect(() => {
+    setRole(localStorage.getItem("role"));
+  }, []);
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((i) => (
@@ -10,7 +14,7 @@ const Sidebar = () => {
             {i.title}
           </span>
           {i.items.map((item) => {
-            if (item.visible.includes(role)) {
+            if (role && item.visible.includes(role)) {
               return (
                 <a
                   href={item.href}
