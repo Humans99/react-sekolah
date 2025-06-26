@@ -43,6 +43,7 @@ const SignIn = () => {
       setLoading(true);
       const res = await loginUser(data);
       navigate("/dashboard", { replace: true });
+      SuccessToast({ message: res.message });
     } catch (err) {
       const error = err as AxiosError<ValidationError>;
       if (error.response?.data?.errors) {
