@@ -38,8 +38,8 @@ const StudentRow = ({ item, role, onSuccessDelete }: Props) => {
         {`${item?.grade?.level.split(" ")[1]}${item?.class.name}`}
       </td>
       <td className="whitespace-nowrap hidden xl:table-cell">{item.phone}</td>
-      <td className="whitespace-nowrap hidden xl:table-cell">
-        {item?.parent?.address ?? "Jl. Kebangkitan Nasional No. 45"}
+      <td className="whitespace-nowrap hidden 2xl:table-cell">
+        {item?.parent?.address}
       </td>
       <td className="">
         <div className="flex items-center gap-2">
