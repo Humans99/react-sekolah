@@ -36,7 +36,7 @@ const TeacherRow = ({ item, role, onSuccessDelete }: Props) => {
         {item.subject.name}
       </td>
       <td className="whitespace-nowrap hidden xl:table-cell">{item.phone}</td>
-      <td className="whitespace-nowrap hidden xl:table-cell">{item.address}</td>
+      <td className="whitespace-nowrap hidden 2xl:table-cell">{item.address}</td>
       <td className="">
         <div className="flex items-center gap-2">
           <button
