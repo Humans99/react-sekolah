@@ -1,11 +1,10 @@
-import { role } from "../../lib/data";
 import AdminPage from "./Admin";
 import ParentPage from "./Parent";
 import StudentPage from "./Student";
 import TeacherPage from "./Teacher";
 
 const RoleDashboard = () => {
-  switch (role) {
+  switch (localStorage.getItem("role")) {
     case "admin":
       return <AdminPage />;
     case "teacher":
