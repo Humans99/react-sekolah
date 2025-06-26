@@ -28,6 +28,7 @@ const schema = z.object({
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const {
     setError,
     register,
@@ -39,7 +40,8 @@ const SignIn = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await loginUser(data);
+      setLoading(true);
+      const res = await loginUser(data);
       navigate("/dashboard", { replace: true });
     } catch (err) {
       const error = err as AxiosError<ValidationError>;
@@ -54,6 +56,8 @@ const SignIn = () => {
       } else {
         alert("Login Failed");
       }
+    } finally {
+      setLoading(false);
     }
   });
   return (
