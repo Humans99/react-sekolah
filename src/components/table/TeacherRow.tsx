@@ -6,6 +6,7 @@ type Props = {
   item: {
     id: number;
     code: string;
+    nip: string;
     name: string;
     photo: string;
     phone: string;
@@ -29,6 +30,7 @@ const TeacherRow = ({ item, role, onSuccessDelete }: Props) => {
           <h3 className="text-sm text-gray-500">{item?.user?.email}</h3>
         </div>
       </td>
+      <td className="whitespace-nowrap hidden lg:table-cell">{item.nip}</td>
       <td className="whitespace-nowrap hidden md:table-cell">{item.code}</td>
       <td className="whitespace-nowrap hidden md:table-cell">
         {item.subject.name}
