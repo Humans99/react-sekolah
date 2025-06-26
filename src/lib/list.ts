@@ -26,7 +26,7 @@ export const teacherColumns = [
   {
     header: "Alamat",
     key: "address",
-    className: "hidden xl:table-cell whitespace-nowrap",
+    className: "hidden 2xl:table-cell whitespace-nowrap",
   },
   {
     header: "Aksi",
@@ -57,7 +57,7 @@ export const studentColumns = [
   {
     header: "Address",
     key: "address",
-    className: "hidden xl:table-cell whitespace-nowrap",
+    className: "hidden 2xl:table-cell whitespace-nowrap",
   },
   {
     header: "Aksi",
