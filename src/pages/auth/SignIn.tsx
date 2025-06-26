@@ -2,8 +2,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import { InputForm } from "../../components";
-import { loginUser } from "../../services";
+import { InputForm, SuccessToast } from "@/components";
+import { loginUser } from "@/services";
 import { AxiosError } from "axios";
 
 type LoginData = {
