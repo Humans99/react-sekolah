@@ -10,10 +10,16 @@ import {
 } from "./teacherServices";
 
 // Student
-import { getAllStudents } from "./studentServices";
+import {
+  getAllStudents,
+  createStudent,
+  deleteStudent,
+} from "./studentServices";
 
 // Export
 export {
+  deleteStudent,
+  createStudent,
   getAllStudents,
   getTeacher,
   loginUser,
