@@ -45,8 +45,8 @@ export const studentColumns = [
     className: "hidden md:table-cell whitespace-nowrap",
   },
   {
-    header: "Grade",
-    key: "grade",
+    header: "Kelas",
+    key: "class",
     className: "hidden md:table-cell whitespace-nowrap",
   },
   {
