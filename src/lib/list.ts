@@ -4,6 +4,11 @@ export const teacherColumns = [
     key: "info",
   },
   {
+    header: "NIP Guru",
+    key: "nip",
+    className: "hidden lg:table-cell whitespace-nowrap",
+  },
+  {
     header: "Kode Guru",
     key: "teacherId",
     className: "hidden md:table-cell whitespace-nowrap",
