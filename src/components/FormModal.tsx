@@ -1,6 +1,6 @@
 // FormModal.tsx
 import React, { lazy, Suspense, useState, type JSX } from "react";
-import { deleteTeacher } from "../services";
+import { deleteStudent, deleteTeacher } from "../services";
 import SuccessToast from "./toast/Success";
 
 type TableType = "teacher" | "student";
@@ -26,6 +26,11 @@ type Props = {
   onSuccessCreate?: () => void;
 };
 
+const deleteActions: Record<TableType, (code: string) => Promise<any>> = {
+  teacher: deleteTeacher,
+  student: deleteStudent,
+};
+
 const TeacherForm = lazy(() => import("./forms/TeacherForm"));
 const StudentForm = lazy(() => import("./forms/StudentForm"));
 
@@ -41,7 +46,7 @@ const forms: Record<
     <TeacherForm type={type} data={data} onSuccessCreate={onSuccessCreate} />
   ),
   student: (type, data, onSuccessCreate) => (
-    <StudentForm type={type} data={data} onSuccessDelete={onSuccessCreate} />
+    <StudentForm type={type} data={data} onSuccessCreate={onSuccessCreate} />
   ),
 };
 
@@ -116,7 +121,8 @@ const FormModal = ({
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await deleteTeacher(code!);
+      const deleteFn = deleteActions[table];
+      const res = await deleteFn(code!);
       setOpen(false);
       SuccessToast({ message: res.message });
       onSuccessDelete?.();
