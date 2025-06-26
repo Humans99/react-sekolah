@@ -35,7 +35,7 @@ const StudentRow = ({ item, role, onSuccessDelete }: Props) => {
         {item.nis ?? "1103204012"}
       </td>
       <td className="whitespace-nowrap hidden md:table-cell">
-        {item?.grade?.level.split(" ")[1]}
+        {`${item?.grade?.level.split(" ")[1]}${item?.class.name}`}
       </td>
       <td className="whitespace-nowrap hidden xl:table-cell">{item.phone}</td>
       <td className="whitespace-nowrap hidden xl:table-cell">
